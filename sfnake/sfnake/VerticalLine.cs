@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace sfnake
 {
-    class HorizontalLine : Figure
+    class VerticalLine : Figure
     {
-        public HorizontalLine(int xLeft, int xReight, int y, char sym)
+        public VerticalLine (int yDown, int yUp, int x, char sym)
         {
             pList = new List<Point>();
-            for (int x = xLeft; x <= xReight; x++)
+            for (int y = yDown; y <= yUp; y++)
             {
-                Point p = new Point(x,y,sym);
+                Point p = new Point(x, y, sym);
                 pList.Add(p);
             }
         }

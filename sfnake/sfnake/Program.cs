@@ -10,14 +10,23 @@ namespace sfnake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 1, '#');
-            p1.Draw();
+            Console.SetWindowSize(1, 1);
+            Console.SetBufferSize(80, 25);
+            Console.SetWindowSize(80, 25);
 
-            Point p2 = new Point(4, 5, '*');
-            p2.Draw();
+            //Отрисовка полей
+            HorizontalLine UpLine = new HorizontalLine(0, 78, 0, '#');
+            UpLine.Drow();
+            HorizontalLine DownLine = new HorizontalLine(0, 78, 24, '#');
+            DownLine.Drow();
+            VerticalLine LeftLine = new VerticalLine(0, 24, 0, '#');
+            LeftLine.Drow();
+            VerticalLine ReigtLine = new VerticalLine(0, 24, 78, '#');
+            ReigtLine.Drow();
 
-            HorizontalLine Line = new HorizontalLine(3, 8, 8, '+');
-            Line.Drow();
+            //Отрисовка точки
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
             Console.ReadLine();
         }
